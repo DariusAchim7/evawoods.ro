@@ -80,8 +80,11 @@ img {
 }
 
 .hero-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #6B4C3B;
 }
 
 .hero-section p {
@@ -92,15 +95,85 @@ img {
    About Section
 ========================== */
 .about-section {
-  padding: 60px 0;
+  padding: 60px 20px;
   background-color: #fff;
   text-align: center;
 }
 
 .about-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #6B4C3B;
 }
+
+/* ==========================
+   Servicii Section
+========================== */
+
+.services-section {
+  background-color: #f9f6f2;
+  padding: 60px 20px;
+  text-align: center;
+  color: #6B4C3B;
+}
+
+.services-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.services-list {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.service-item {
+  max-width: 220px;
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #4a3b2f;
+  transition: transform 0.3s ease;
+}
+
+.service-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.service-item p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+  filter: brightness(1.1);
+  cursor: default;
+}
+
+/* Responsive: pe mobil stivuim vertical */
+@media (max-width: 600px) {
+  .services-list {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .service-item {
+    max-width: 90%;
+  }
+}
+
 
 /* ==========================
    Portfolio Section
