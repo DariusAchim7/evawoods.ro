@@ -9,9 +9,10 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
+  background-color: #dfdfdf;
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -29,12 +30,16 @@ img {
    Header
 ========================== */
 .header-area {
+  width: 96%;
+  height: 80px;
+  margin: 20px auto;
+  border-radius: 40px;
   background: #fff;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
   border-bottom: 1px solid #eee;
-  padding: 15px 0;
+  padding: 15px 30px;
 }
 
 .main-nav {
@@ -51,17 +56,38 @@ img {
   display: flex;
   gap: 30px;
   list-style: none;
+  
 }
 
 .main-nav .nav li a {
+  position: relative;
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  padding-bottom: 4px; /* spațiu pentru linia de hover */
+  transition: color 0.3s ease;
 }
 
-.main-nav .nav li a.active,
-.main-nav .nav li a:hover {
-  color: #006e51;
+.main-nav .nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #473804; /* culoarea liniei */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.main-nav .nav li a:hover,
+.main-nav .nav li a.active {
+  color: #473804;
+}
+
+.main-nav .nav li a:hover::after,
+.main-nav .nav li a.active::after {
+  width: 100%;
 }
 
 .menu-trigger {
@@ -70,16 +96,186 @@ img {
   font-weight: bold;
 }
 
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  background-color: #25d366;
+  padding: 8px 15px;
+  border-radius: 30px;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe57;
+  transform: scale(1.05);
+}
+
+.whatsapp-btn svg {
+  flex-shrink: 0;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav .nav {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
 /* ==========================
    Hero Section
 ========================== */
 .hero-section {
-  padding: 80px 0;
-  text-align: center;
-  background-color: #f4f4f4;
+  height: calc(100vh - 100px); /* ține cont de header sticky */
+  width: 96%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-image: url('../images/cover.jpg'); /* înlocuiește cu imaginea reală */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 0 20px;
+  scroll-margin-top: 100px;
+  position: relative;
+  border-radius: 60px;
+  margin: 20px auto;
+  overflow: hidden;
 }
 
-.hero-section h1 {
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.hero-left,
+.hero-right {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* STÂNGA */
+.hero-text-box {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 90%;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  text-align: left;
+}
+
+.hero-text-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.hero-text-box p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #25d366;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+}
+
+.cta-button:hover {
+  background-color: #1ebe57;
+}
+
+/* DREAPTA VIDEO */
+.hero-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 60px 60px 0;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero-left,
+  .hero-right {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .hero-video {
+    position: relative;
+    height: 300px;
+    border-radius: 0 0 60px 60px;
+  }
+
+  .hero-text-box {
+    text-align: center;
+  }
+}
+
+
+/* DREAPTA - video */
+.hero-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*.hero-section h1 {
   font-size: 2.8rem;
   margin-bottom: 40px;
   font-weight: 700;
@@ -89,15 +285,53 @@ img {
 
 .hero-section p {
   font-size: 1.2rem;
-}
+}*/
 
 /* ==========================
    About Section
 ========================== */
 .about-section {
-  padding: 60px 20px;
-  background-color: #fff;
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  background-image: url('../images/cover.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: sticky;
+  border-radius: 20px;
+  padding: 60px 0;
+  margin: 40px 0;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 0 20px;
+  scroll-margin-top: 80px;
+  position: relative;
+  border-radius: 60px;
+  margin: 20px auto; /* Adaugă margini pentru a evidenția colțurile rotunjite */
+  overflow: hidden; /* Asigură-te că conținutul nu depășește marginile rotunjite */
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.about-section .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* pentru mic padding pe mobil */
 }
 
 .about-section h2 {
@@ -113,13 +347,32 @@ img {
 ========================== */
 
 .services-section {
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: #f9f6f2;
-  padding: 60px 20px;
   text-align: center;
   color: #6B4C3B;
+  position: sticky;
+  border-radius: 20px;
+  padding: 60px 0;
+  margin: 40px 0;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 0 20px;
+  scroll-margin-top: 80px;
+  position: relative;
+  border-radius: 60px;
+  margin: 20px auto; /* Adaugă margini pentru a evidenția colțurile rotunjite */
+  overflow: hidden; /* Asigură-te că conținutul nu depășește marginile rotunjite */
 }
 
 .services-section h2 {
+  color: #473804;
   font-size: 2.8rem;
   margin-bottom: 40px;
   font-weight: 700;
@@ -181,6 +434,30 @@ img {
 .section-heading {
   text-align: center;
   margin-bottom: 40px;
+}
+
+.section{
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f6f2;
+  text-align: center;
+  position: sticky;
+  border-radius: 20px;
+  padding: 60px 0;
+  margin: 40px 0;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 0 20px;
+  scroll-margin-top: 80px;
+  position: relative;
+  border-radius: 60px;
+  margin: 20px auto; /* Adaugă margini pentru a evidenția colțurile rotunjite */
+  overflow: hidden; /* Asigură-te că conținutul nu depășește marginile rotunjite */
 }
 
 .card {
