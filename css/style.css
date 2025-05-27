@@ -139,22 +139,25 @@ img {
    Hero Section
 ========================== */
 .hero-section {
-  height: calc(100vh - 100px); /* ține cont de header sticky */
-  width: 96%;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  background-image: url('../images/cover.jpg'); /* înlocuiește cu imaginea reală */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  padding: 0 20px;
-  scroll-margin-top: 100px;
   position: relative;
-  border-radius: 60px;
+  width: 96%;
+  height: calc(100vh - 140px); /* Ajustează după înălțimea headerului sticky */
   margin: 20px auto;
   overflow: hidden;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .hero-section::before {
@@ -164,115 +167,53 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 0;
-}
-
-.hero-section .container {
-  position: relative;
+  background: rgba(0, 0, 0, 0.4); /* Overlay semi-transparent pentru lizibilitate */
   z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 40px 0;
 }
 
-.hero-left,
-.hero-right {
-  flex: 1 1 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-content {
   position: relative;
-}
-
-/* STÂNGA */
-.hero-text-box {
-  background-color: white;
-  border-radius: 20px;
+  z-index: 2;
+  color: white;
+  text-align: center;
   padding: 40px;
-  max-width: 90%;
-  margin: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: auto;
-  text-align: left;
+  max-width: 800px;
 }
 
-.hero-text-box h1 {
-  font-size: 2.5rem;
+.hero-content h1 {
+  font-size: 3rem;
   margin-bottom: 20px;
-  color: #222;
 }
 
-.hero-text-box p {
-  font-size: 1.2rem;
-  color: #555;
+.hero-content p {
+  font-size: 1.5rem;
   margin-bottom: 30px;
 }
 
 .cta-button {
   background-color: #25d366;
   color: white;
-  padding: 12px 25px;
+  padding: 14px 30px;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
+  font-size: 1.1rem;
   transition: background-color 0.3s ease;
-  width: fit-content;
 }
 
 .cta-button:hover {
   background-color: #1ebe57;
 }
 
-/* DREAPTA VIDEO */
-.hero-video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 0 60px 60px 0;
-  z-index: -1;
-}
-
 /* RESPONSIVE */
-@media (max-width: 1024px) {
-  .hero-section {
-    flex-direction: column;
-    height: auto;
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
   }
 
-  .hero-left,
-  .hero-right {
-    flex: 1 1 100%;
-    max-width: 100%;
+  .hero-content p {
+    font-size: 1.1rem;
   }
-
-  .hero-video {
-    position: relative;
-    height: 300px;
-    border-radius: 0 0 60px 60px;
-  }
-
-  .hero-text-box {
-    text-align: center;
-  }
-}
-
-
-/* DREAPTA - video */
-.hero-video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 /*.hero-section h1 {
