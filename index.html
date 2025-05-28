@@ -225,19 +225,62 @@
   </section>
   
   
-
   <section id="contact" class="contact-section">
     <div class="container">
-      <h2>Proiectele noastre ti-au atras atentia?</h2>
-      <h2>Hai sa ne apucam de treaba! Contactează-ne si spune-ne ce ai dori sa realizam impreuna!</h2>
-      <p>Telefon: 0746 881 504</p>
-      <p>Email: evawoodsibiu@gmail.com</p>
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Nume" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Mesaj" required></textarea>
-        <button type="submit">Trimite</button>
-      </form>
+      
+      <div class="both-form-icons-container">
+        <div class="form-goup-container">
+          <div class="intro-contact">
+            <h2>Proiectele noastre ti-au atras atentia?</h2>
+            <h2>Hai sa ne apucam de treaba! Contactează-ne si spune-ne ce ai dori sa realizam impreuna!</h2>
+          </div>
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="378dd98a-0c54-42e0-a8e6-0fc0e4d8d070" />
+						<input type="hidden" name="subject" value="New message from evawoods" />
+						<input type="hidden" name="from_name" value="evawoods" />
+
+            <div class="form-group">
+							<label for="name" class="form-label">Nume</label>
+							<input id="name" name="name" class="form-input" placeholder="Introdu nume" type="text" />
+						</div>
+						<div class="form-group">
+							<label for="email" class="form-label">Email</label>
+							<input id="email" name="email" class="form-input" placeholder="Introdu email" type="email" />
+						</div>
+						<div class="form-group">
+							<label for="message" class="form-label">Mesaj</label>
+							<textarea class="form-textarea" id="message" name="message" placeholder="Scrie mesajul tau..."></textarea>
+						</div>
+						<div class="form-submit-button-container">
+							<button class="form-submit" type="submit">Trimite mesaj</button>
+						</div>
+          </form>
+        </div>
+
+        <div class="icons-contact-container">
+					<p><strong>Contactează-ne rapid pentru a începe colaborarea!</strong></p>
+					<p>Ne puteti suna, trimite un mesaj sau un email, iar noi îți vom răspunde în cel mai scurt timp posibil.</p>
+					<div class="wrapper">
+						<div class="box-contact-more">
+							<i class='fas fa-mobile-alt' style='font-size:42px'></i>
+							<div class="box-contact-more-text">
+								<p class="text-contact-more-title text-white">Telefon</p>
+								<p>(+4) 0746 888 504</p>
+							</div>
+						</div>
+						<div class="box-contact-more">
+							<i class='fas fa-envelope-open' style='font-size:42px'></i>
+							<div class="box-contact-more-text">
+								<p class="text-contact-more-title text-white">Email</p>
+								<p>evawoodsibiu@gmail.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+      </div>
+
+      
     </div>
   </section>
 
