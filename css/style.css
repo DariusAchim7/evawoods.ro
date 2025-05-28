@@ -1,29 +1,35 @@
 /* ==========================
    General Styles
 ========================== */
-* {
+*,
+*::before, /* Adăugat pentru o mai bună aplicare a box-sizing */
+*::after { /* Adăugat pentru o mai bună aplicare a box-sizing */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Montserrat', sans-serif; /* Fontul Montserrat aplicat */
   background-color: #dfdfdf;
   color: #333;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Previne scroll-ul orizontal nedorit */
 }
 
 img {
   max-width: 100%;
-  display: block;
+  display: block; /* Elimină spațiul suplimentar de sub imagini */
 }
 
 .container {
   width: 96%;
-  
-  margin: 0 auto;
+  margin: 0 auto; /* Centrează containerul */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Asigură că titlurile folosesc Montserrat */
+  font-weight: 700; /* Titlurile sunt bold */
 }
 
 /* ==========================
@@ -56,7 +62,7 @@ img {
   display: flex;
   gap: 30px;
   list-style: none;
-  
+  align-items: center; /* Aliniază elementele vertical */
 }
 
 .main-nav .nav li a {
@@ -64,7 +70,7 @@ img {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  padding-bottom: 4px; /* spațiu pentru linia de hover */
+  padding-bottom: 4px; /* Spațiu pentru linia de hover */
   transition: color 0.3s ease;
 }
 
@@ -75,7 +81,7 @@ img {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: #473804; /* culoarea liniei */
+  background-color: #473804; /* Culoarea liniei */
   transition: width 0.3s ease;
   border-radius: 2px;
 }
@@ -108,7 +114,7 @@ img {
   text-decoration: none;
   color: white;
   font-weight: 600;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif; /* Păstrează Arial pentru butonul WhatsApp dacă este o cerință specifică */
   font-size: 14px;
   flex-shrink: 0;
 }
@@ -120,19 +126,6 @@ img {
 
 .whatsapp-btn svg {
   flex-shrink: 0;
-}
-
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.main-nav .nav {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  align-items: center;
 }
 
 /* ==========================
@@ -205,29 +198,6 @@ img {
   background-color: #1ebe57;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-  }
-}
-
-/*.hero-section h1 {
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  color: #6B4C3B;
-}
-
-.hero-section p {
-  font-size: 1.2rem;
-}*/
-
 /* ==========================
    About Section
 ========================== */
@@ -235,25 +205,20 @@ img {
   width: 96%;
   margin: 20px auto;
   padding: 60px 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: left;
-
   background-color: #f9f6f2;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  color: #fff;
+  /* background-size: cover; */ /* Comentat, nu este necesar dacă nu ai o imagine de fundal aici */
+  /* background-position: center; */ /* Comentat */
+  /* background-repeat: no-repeat; */ /* Comentat */
+  color: #6B4C3B; /* Am setat culoarea textului aici, deoarece era '#fff' dar elementele din container aveau '#6B4C3B' */
   border-radius: 60px;
   overflow: hidden;
-
   position: relative;
   scroll-margin-top: 80px;
-
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
@@ -264,51 +229,25 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 60px; /* adaptat la containerul părinte */
+  /* border-radius: 60px; */ /* Comentat, deja setat pe .about-section */
   z-index: 0;
 }
 
 .about-section .container {
   position: relative;
   z-index: 1;
-  
-  margin: 0 auto;
-  padding: 0 20px;
+  width: 100%; /* Asigură că containerul din interior ia lățimea disponibilă */
+  padding: 0 20px; /* Pentru mic padding pe mobil */
 }
 
 .about-section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  color: #6B4C3B;
-}
-
-.about-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  z-index: 0;
-}
-
-.about-section .container {
-  position: relative;
-  z-index: 1;
-  
-  margin: 0 auto;
-  padding: 0 20px; /* pentru mic padding pe mobil */
-}
-
-.about-section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  color: #6B4C3B;
+  margin-bottom: 20px;
+  color: #0b0b0b;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  font-size: 55px;
+  font-weight: 100;
+  line-height: 110%;
 }
 
 .social-links {
@@ -341,7 +280,6 @@ img {
 /* ==========================
    Servicii Section
 ========================== */
-
 .services-section {
   width: 96%;
   display: flex;
@@ -350,29 +288,24 @@ img {
   align-items: center;
   text-align: center;
   background-color: #f9f6f2;
-  text-align: center;
-  color: #6B4C3B;
-  position: sticky;
-  border-radius: 20px;
-  padding: 60px 0;
-  margin: 40px 0;
-  color: #fff;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  padding: 0 20px;
-  scroll-margin-top: 80px;
-  position: relative;
-  border-radius: 60px;
-  margin: 20px auto; /* Adaugă margini pentru a evidenția colțurile rotunjite */
+  color: #6B4C3B; /* Am setat culoarea textului aici */
+  border-radius: 60px; /* Consolidat de la 20px la 60px pentru consistență */
+  padding: 60px 20px; /* Padding ajustat pentru a fi consistent */
+  margin: 20px auto; /* Margini pentru a evidenția colțurile rotunjite */
   overflow: hidden; /* Asigură-te că conținutul nu depășește marginile rotunjite */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative; /* Ajustat pentru a nu mai fi `sticky` dacă nu este necesar */
+  scroll-margin-top: 80px;
 }
 
 .services-section h2 {
-  color: #473804;
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+  color: #0b0b0b;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  font-size: 55px;
+  font-weight: 100;
+  line-height: 110%;
 }
 
 .services-list {
@@ -384,7 +317,7 @@ img {
 
 .service-item {
   max-width: 220px;
-  flex: 1 1 200px;
+  flex: 1 1 200px; /* Baza flexibilă */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -410,20 +343,6 @@ img {
   cursor: default;
 }
 
-/* Responsive: pe mobil stivuim vertical */
-@media (max-width: 600px) {
-  .services-list {
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-  }
-
-  .service-item {
-    max-width: 90%;
-  }
-}
-
-
 /* ==========================
    Portfolio Section
 ========================== */
@@ -432,7 +351,10 @@ img {
   margin-bottom: 40px;
 }
 
-.section{
+/* Am consolidat stilurile comune pentru secțiuni (portofoliu, contact, footer) */
+.section,
+.contact-section,
+.footer-area {
   width: 96%;
   display: flex;
   flex-direction: column;
@@ -440,20 +362,14 @@ img {
   align-items: center;
   text-align: center;
   background-color: #f9f6f2;
-  text-align: center;
-  position: sticky;
-  border-radius: 20px;
-  padding: 60px 0;
-  margin: 40px 0;
-  color: #6B4C3B;
+  color: #6B4C3B; /* Culoarea textului setată aici */
+  border-radius: 60px; /* Consolidat pentru toate secțiunile */
+  padding: 60px 20px; /* Padding consistent */
+  margin: 20px auto; /* Margini consistente */
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  padding: 0 20px;
-  scroll-margin-top: 80px;
   position: relative;
-  border-radius: 60px;
-  margin: 20px auto; /* Adaugă margini pentru a evidenția colțurile rotunjite */
-  overflow: hidden; /* Asigură-te că conținutul nu depășește marginile rotunjite */
+  scroll-margin-top: 80px;
 }
 
 .card {
@@ -476,6 +392,7 @@ img {
 
 .carousel-wrapper {
   position: relative;
+  width: 100%; /* Asigură că wrapper-ul ocupă toată lățimea disponibilă */
 }
 
 .owl-nav-custom {
@@ -486,8 +403,9 @@ img {
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  pointer-events: none;
+  pointer-events: none; /* Permite click-urile să treacă prin ele (dacă nu sunt butoane) */
   z-index: 2;
+  padding: 0 10px; /* Adaugă un pic de padding pentru săgeți */
 }
 
 .owl-nav-custom button {
@@ -501,8 +419,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: auto;
+  pointer-events: auto; /* Activează click-urile pentru butoane */
   transition: background-color 0.3s;
+  cursor: pointer; /* Indicăm că este un element clicabil */
 }
 
 .owl-nav-custom button:hover {
@@ -513,27 +432,9 @@ img {
    Contact Section
 ========================== */
 .contact-section {
-  height: 600px;
-  width: 96%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  background-color: #f9f6f2;
-  position: sticky;
-  border-radius: 20px;
-  padding: 60px 0;
-  margin: 40px 0;
-  color: #6B4C3B;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  padding: 0 20px;
-  scroll-margin-top: 80px;
-  position: relative;
-  border-radius: 60px;
-  margin: 20px auto; /* Adaugă margini pentru a evidenția colțurile rotunjite */
-  overflow: hidden; /* Asigură-te că conținutul nu depășește marginile rotunjite */
+  /* Nu mai este nevoie să repetăm stilurile comune de la .section */
+  height: auto; /* Lățimea dinamică în funcție de conținut, dacă 600px nu este fix */
+  text-align: center; /* Centrul textului și al formei */
 }
 
 .contact-section h2 {
@@ -549,7 +450,7 @@ img {
   flex-direction: column;
   gap: 15px;
   max-width: 500px;
-  margin: 30px auto 0;
+  margin: 30px auto 0; /* Centrează formularul */
 }
 
 #contactForm input,
@@ -580,27 +481,10 @@ img {
    Footer
 ========================== */
 .footer-area {
-  height: 80px;
-  background-color: #333;
-  color: rgb(255, 255, 255);
+  /* Nu mai este nevoie să repetăm stilurile comune de la .section */
+  height: auto; /* Lățime dinamică */
+  padding: 30px 20px; /* Padding mai mic pentru footer */
   font-size: 0.9rem;
-  width: 96%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #f9f6f2;
-  position: sticky;
-  color: #6B4C3B;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  padding: 60px 20px;
-  scroll-margin-top: 80px;
-  position: relative;
-  border-radius: 60px;
-  margin: 20px auto; /* Adaugă margini pentru a evidenția colțurile rotunjite */
-  overflow: hidden; /* Asigură-te că conținutul nu depășește marginile rotunjite */
 }
 
 /* ==========================
@@ -614,13 +498,13 @@ img {
     background: #fff;
     position: absolute;
     top: 70px;
-    right: 0;
-    width: 100%;
+    right: 2%; /* Aliniere cu containerul principal */
+    width: 96%; /* Lățimea similară cu containerul */
     padding: 20px;
     border-top: 1px solid #ddd;
-    border-radius: 60px;
-    margin: 20px auto; /* Adaugă margini pentru a evidenția colțurile rotunjite */
-    overflow: hidden; /* Asigură-te că conținutul nu depășește marginile rotunjite */
+    border-radius: 40px; /* Consistență cu header-ul */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Umbră pentru meniu */
+    overflow: hidden;
   }
 
   .main-nav.active .nav {
@@ -651,8 +535,21 @@ img {
 
   .about-section h2,
   .section-heading h2,
-  .contact-section h2 {
+  .contact-section h2,
+  .services-section h2 { /* Inclus și serviciile */
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-list {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .service-item {
+    max-width: 90%;
   }
 }
 
@@ -663,11 +560,34 @@ img {
 
   .hero-section {
     padding: 60px 0;
+    height: auto; /* Asigură că secțiunea hero se adaptează pe ecrane foarte mici */
+  }
+
+  .hero-content {
+    padding: 20px; /* Mai puțin padding pe mobil */
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
   }
 
   #contactForm input,
   #contactForm textarea,
   #contactForm button {
     font-size: 0.95rem;
+  }
+
+  .about-section,
+  .services-section,
+  .section, /* Portofoliu */
+  .contact-section,
+  .footer-area {
+    border-radius: 40px; /* Reducem border-radius pe ecrane mici dacă este necesar */
+    padding: 40px 15px; /* Mai puțin padding pentru secțiuni */
+    margin: 15px auto; /* Margini reduse */
   }
 }
