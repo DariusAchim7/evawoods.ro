@@ -70,3 +70,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+$(document).ready(function(){
+  var owl = $(".owl-menu-item").owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: { items: 1 },
+      768: { items: 2 },
+      1024: { items: 3 }
+    }
+  });
+
+  $(".owl-prev-custom").click(function() {
+    owl.trigger("prev.owl.carousel");
+  });
+
+  $(".owl-next-custom").click(function() {
+    owl.trigger("next.owl.carousel");
+  });
+});

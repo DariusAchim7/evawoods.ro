@@ -8,6 +8,8 @@
 
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <!-- Owl Carousel CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
@@ -61,6 +63,18 @@
         Eva Woods este o afacere de familie, mică, dar plină de pasiune pentru lemn și meșteșugul tradițional.
         De la prima schiță până la produsul finit, punem suflet în fiecare piesă de mobilier, creând piese unice, personalizate, care aduc căldură și eleganță în casa ta.
       </p>
+      <p>Urmărește-ne pe rețelele sociale pentru cele mai noi proiecte și povești.</p>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/evawoods.online/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -92,60 +106,67 @@
       <div class="section-heading">
         <h2>Lucrări realizate</h2>
       </div>
-      <div class="owl-carousel owl-menu-item">
   
-        <!-- CARD 1 -->
-        <div class="item">
-          <div class="card">
-            <!-- Container galerie -->
-            <div id="galerie1" class="galerie" style="cursor:pointer;">
-              <a href="images/proiect1.jpg">
-                <img src="images/proiect1.jpg" alt="Masa Epoxidică" style="width:100%; border-radius:10px;">
-              </a>
-              <!-- Poze ascunse, dar în același container -->
-              <a href="images/proiect2.jpg"></a>
-              <a href="images/proiect3.jpg"></a>
-            </div>
-            <h3 class="title">Masa Epoxidică</h3>
-            <p class="description">Rășină verde + lemn de nuc.</p>
-          </div>
+      <div class="carousel-wrapper">
+        <!-- Butoane săgeți -->
+        <div class="owl-nav-custom">
+          <button class="owl-prev-custom" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="owl-next-custom" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
   
-        <!-- CARD 2 -->
-        <div class="item">
-          <div class="card">
-            <!-- Container galerie -->
-            <div id="galerie2" class="galerie" style="cursor:pointer;">
-              <a href="images/proiect2.jpg">
-                <img src="images/proiect2.jpg" alt="Masa Epoxidică" style="width:100%; border-radius:10px;">
-              </a>
-              <!-- Poze ascunse, dar în același container -->
-              <a href="images/proiect1.jpg"></a>
-              <a href="images/proiect3.jpg"></a>
+        <!-- Carusel -->
+        <div class="owl-carousel owl-menu-item">
+  
+          <!-- CARD 1 -->
+          <div class="item">
+            <div class="card">
+              <div id="galerie1" class="galerie" style="cursor:pointer;">
+                <a href="images/proiect1.jpg">
+                  <img src="images/proiect1.jpg" alt="Masa Epoxidică" style="width:100%; border-radius:10px;">
+                </a>
+                <a href="images/proiect2.jpg"></a>
+                <a href="images/proiect3.jpg"></a>
+              </div>
+              <h3 class="title">Masa Epoxidică</h3>
+              <p class="description">Rășină verde + lemn de nuc.</p>
             </div>
-            <h3 class="title">Masa Epoxidică</h3>
-            <p class="description">Rășină verde + lemn de nuc.</p>
           </div>
-        </div>
-        
-        <!-- CARD 3 -->
-        <div class="item">
-          <div class="card">
-            <!-- Container galerie -->
-            <div id="galerie2" class="galerie" style="cursor:pointer;">
-              <a href="images/proiect3.jpg">
-                <img src="images/proiect3.jpg" alt="Masa Epoxidică" style="width:100%; border-radius:10px;">
-              </a>
-              <!-- Poze ascunse, dar în același container -->
-              <a href="images/proiect1.jpg"></a>
-              <a href="images/proiect2.jpg"></a>
+  
+          <!-- CARD 2 -->
+          <div class="item">
+            <div class="card">
+              <div id="galerie2" class="galerie" style="cursor:pointer;">
+                <a href="images/proiect2.jpg">
+                  <img src="images/proiect2.jpg" alt="Masa Epoxidică" style="width:100%; border-radius:10px;">
+                </a>
+                <a href="images/proiect1.jpg"></a>
+                <a href="images/proiect3.jpg"></a>
+              </div>
+              <h3 class="title">Masa Epoxidică</h3>
+              <p class="description">Rășină verde + lemn de nuc.</p>
             </div>
-            <h3 class="title">Masa Epoxidică</h3>
-            <p class="description">Rășină verde + lemn de nuc.</p>
           </div>
+  
+          <!-- CARD 3 -->
+          <div class="item">
+            <div class="card">
+              <div id="galerie3" class="galerie" style="cursor:pointer;">
+                <a href="images/proiect3.jpg">
+                  <img src="images/proiect3.jpg" alt="Masa Epoxidică" style="width:100%; border-radius:10px;">
+                </a>
+                <a href="images/proiect1.jpg"></a>
+                <a href="images/proiect2.jpg"></a>
+              </div>
+              <h3 class="title">Masa Epoxidică</h3>
+              <p class="description">Rășină verde + lemn de nuc.</p>
+            </div>
+          </div>
+  
         </div>
-
-
       </div>
     </div>
   </section>

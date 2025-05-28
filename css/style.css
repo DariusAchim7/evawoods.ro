@@ -311,6 +311,33 @@ img {
   color: #6B4C3B;
 }
 
+.social-links {
+  margin-top: 40px;
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+  z-index: 1;
+}
+
+.social-links a {
+  color: #fff;
+  background-color: #6B4C3B; /* Maro elegant */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: transform 0.2s, background-color 0.3s;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  transform: scale(1.15);
+  background-color: #3e2b21;
+}
+
 /* ==========================
    Servicii Section
 ========================== */
@@ -447,6 +474,41 @@ img {
   color: #555;
 }
 
+.carousel-wrapper {
+  position: relative;
+}
+
+.owl-nav-custom {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.owl-nav-custom button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  transition: background-color 0.3s;
+}
+
+.owl-nav-custom button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* ==========================
    Contact Section
 ========================== */
@@ -519,10 +581,8 @@ img {
 ========================== */
 .footer-area {
   height: 80px;
-  padding: 20px 0;
   background-color: #333;
   color: rgb(255, 255, 255);
-  text-align: center;
   font-size: 0.9rem;
   width: 96%;
   display: flex;
@@ -531,15 +591,11 @@ img {
   align-items: center;
   text-align: center;
   background-color: #f9f6f2;
-  text-align: center;
   position: sticky;
-  border-radius: 20px;
-  padding: 60px 0;
-  margin: 40px 0;
   color: #6B4C3B;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  padding: 0 20px;
+  padding: 60px 20px;
   scroll-margin-top: 80px;
   position: relative;
   border-radius: 60px;
@@ -562,6 +618,9 @@ img {
     width: 100%;
     padding: 20px;
     border-top: 1px solid #ddd;
+    border-radius: 60px;
+    margin: 20px auto; /* Adaugă margini pentru a evidenția colțurile rotunjite */
+    overflow: hidden; /* Asigură-te că conținutul nu depășește marginile rotunjite */
   }
 
   .main-nav.active .nav {
