@@ -332,7 +332,8 @@ h1, h2, h3, h4, h5, h6 {
 .service-proiectare,
 .service-masurare,
 .service-mentenanta,
-.service-consultanta {
+.service-consultanta,
+.service-montaj {
   display: flex;
   flex-direction: row; /* ✅ schimbat din column în row */
   align-items: flex-start;
@@ -347,7 +348,8 @@ h1, h2, h3, h4, h5, h6 {
 .proiectare-img,
 .masurare-img,
 .mentenanta-img,
-.consultanta-img {
+.consultanta-img,
+.montaj-img {
   min-width: 60px;
   display: flex;
   align-items: flex-start;
@@ -357,14 +359,16 @@ h1, h2, h3, h4, h5, h6 {
 .descriere-proiectare,
 .descriere-masurare,
 .descriere-mentenanta,
-.descriere-consultanta {
+.descriere-consultanta,
+.descriere-montaj {
   flex: 1;
 }
 
 .service-proiectare:hover,
 .service-masurare:hover,
 .service-mentenanta:hover,
-.service-consultanta:hover {
+.service-consultanta:hover,
+.service-montaj:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -374,8 +378,26 @@ h1, h2, h3, h4, h5, h6 {
 .service-proiectare:hover i,
 .service-masurare:hover i,
 .service-mentenanta:hover i,
-.service-consultanta:hover i {
+.service-consultanta:hover i,
+.service-montaj:hover i {
   color: #d4a373; /* o nuanță mai deschisă */
+}
+
+.separator-line {
+  width: 60px;
+  height: 2px;
+  background-color: #d4a373; /* poți schimba cu altă culoare dorită */
+  margin: 10px 0;
+  border-radius: 1px;
+}
+
+.bg-yellow {
+  background-color: #FFD700; /* sau orice nuanță de galben preferi */
+}
+
+.no-margin-lr {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* ==========================
@@ -407,12 +429,25 @@ h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 80px;
 }
 
+.section-heading h2 {
+  margin-bottom: 20px;
+  color: #0b0b0b;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  font-size: 55px;
+  font-weight: 100;
+  line-height: 110%;
+  text-align: left;
+}
+
 .card {
   padding: 15px;
   background-color: #fafafa;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
 }
 
 .card h3.title {
@@ -461,6 +496,49 @@ h1, h2, h3, h4, h5, h6 {
 
 .owl-nav-custom button:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.galerie {
+  position: relative;
+  border-radius: 10px;
+}
+
+.galerie img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff !important;
+  font-weight: 600;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  padding: 15px 20px;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card:hover .description {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==========================
